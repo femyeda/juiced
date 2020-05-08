@@ -1,0 +1,74 @@
+{
+  "name": "@theindividualcompany/juiced",
+  "description": "JavaScript but Juiced",
+  "version": "0.0.0",
+  "author": "femyeda",
+  "private": true,
+  "bin": {
+    "juiced": "./bin/run"
+  },
+  "bugs": "https://github.com/theindividualcompany/juiced/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "mem-fs": "^1.1.3",
+    "mem-fs-editor": "^6.0.0",
+    "pkg-dir": "^4.2.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mem-fs": "^1.1.2",
+    "@types/mem-fs-editor": "^5.1.1",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "globby": "^10",
+    "mocha": "^5",
+    "nyc": "^14",
+    "oclif": "^1.16.1",
+    "ts-node": "^8",
+    "tslint": "^5",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/theindividualcompany/juiced",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "NONE",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "juiced",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theindividualcompany/juiced.git"
+  },
+  "scripts": {
+    "oclif": "./node_modules/.bin/oclif",
+    "readme": "./node_modules/.bin/oclif-dev readme",
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
