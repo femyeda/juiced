@@ -44,8 +44,7 @@ ARGUMENTS
   OUT   [default: /Users/femi/projects/individual/juiced] output directory (defaults to components/)
 
 OPTIONS
-  -f, --force
-  -h, --help   show CLI help
+  -h, --help  show CLI help
 ```
 
 _See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/component.ts)_

@@ -10,7 +10,6 @@ export default class Component extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
-    force: flags.boolean({char: 'f'}),
   }
 
   static args = [{
