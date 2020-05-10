@@ -29,6 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`juiced component NAME [OUT]`](#juiced-component-name-out)
+* [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
 * [`juiced help [COMMAND]`](#juiced-help-command)
 
 ## `juiced component NAME [OUT]`
@@ -49,6 +50,23 @@ OPTIONS
 
 _See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/component.ts)_
 
+## `juiced crud NAME [OUT]`
+
+describe the command here
+
+```
+USAGE
+  $ juiced crud NAME [OUT]
+
+ARGUMENTS
+  NAME  name of model (PascalCase)
+  OUT   [default: /Users/femi/projects/individual/juiced/pages/api] output directory (defaults to components/)
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/crud.ts)_
 ## `juiced help [COMMAND]`
 
 display help for juiced
