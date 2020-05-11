@@ -1,13 +1,15 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React from 'react'
 
 type Props = {
 
 }
 
-const <%= name%>: React.FunctionComponent<Props> = (props: Props) => (
-  <div className='<%= name%>Component'>
+const <%= name%>: React.FunctionComponent<Props> = (props: Props) => {
+  return (
+    <div className='<%= name%>Component'>
 
-  </div>
-)
+    </div>
+  )
+}
 
 export default <%= name%>
