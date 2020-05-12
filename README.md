@@ -31,6 +31,7 @@ USAGE
 * [`juiced component NAME [OUT]`](#juiced-component-name-out)
 * [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
 * [`juiced help [COMMAND]`](#juiced-help-command)
+* [`juiced page NAME [OUT]`](#juiced-page-name-out)
 
 ## `juiced component NAME [OUT]`
 
@@ -52,7 +53,7 @@ _See code: [src/commands/component.ts](https://github.com/theindividualcompany/j
 
 ## `juiced crud NAME [OUT]`
 
-describe the command here
+Create new component
 
 ```
 USAGE
@@ -60,13 +61,14 @@ USAGE
 
 ARGUMENTS
   NAME  name of model (PascalCase)
-  OUT   [default: /Users/femi/projects/individual/juiced/pages/api] output directory (defaults to components/)
+  OUT   [default: /Users/femi/projects/individual/juiced/pages/api] output directory (defaults to pages/api/)
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
 _See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/crud.ts)_
+
 ## `juiced help [COMMAND]`
 
 display help for juiced
@@ -83,4 +85,22 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `juiced page NAME [OUT]`
+
+Create new page
+
+```
+USAGE
+  $ juiced page NAME [OUT]
+
+ARGUMENTS
+  NAME  name of model (PascalCase)
+  OUT   [default: /Users/femi/projects/individual/juiced/pages] output directory (defaults to pages/)
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/page.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/page.ts)_
 <!-- commandsstop -->
