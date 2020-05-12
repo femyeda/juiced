@@ -1,12 +1,13 @@
 import {Command, flags} from '@oclif/command'
 import {capitalize, toLower} from 'lodash'
+
 import editor from '../utils/editor'
 
 import {apiDir} from './../utils/get-api-dir'
 import {projectRoot} from './../utils/get-project-root'
 
 export default class Component extends Command {
-  static description = 'describe the command here'
+  static description = 'Create new component'
 
   static flags = {
     help: flags.help({char: 'h'}),
@@ -19,7 +20,7 @@ export default class Component extends Command {
   }, {
     name: 'out',
     required: false,
-    description: 'output directory (defaults to components/)',
+    description: 'output directory (defaults to pages/api/)',
     default: apiDir || projectRoot
   }]
 
