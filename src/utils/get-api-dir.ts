@@ -1,6 +1,3 @@
-import {readdirSync} from 'fs'
-import {resolve} from 'path'
-
 import {projectRoot} from './../utils/get-project-root'
 
 // TODO: User recursive find dir
