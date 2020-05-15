@@ -16,7 +16,7 @@ export default class Page extends Command {
   static args = [{
     name: 'name',
     required: true,
-    description: 'name of model (PascalCase)',
+    description: 'name of page (PascalCase)',
   }, {
     name: 'out',
     required: false,
