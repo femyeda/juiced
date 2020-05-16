@@ -19,7 +19,7 @@ $ npm install -g @theindividualcompany/juiced
 $ juiced COMMAND
 running command...
 $ juiced (-v|--version|version)
-@theindividualcompany/juiced/0.0.1 darwin-x64 node-v12.16.1
+@theindividualcompany/juiced/0.0.2 darwin-x64 node-v12.16.1
 $ juiced --help [COMMAND]
 USAGE
   $ juiced COMMAND
@@ -28,13 +28,10 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-- [juiced](#juiced)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`juiced component NAME [OUT]`](#juiced-component-name-out)
-  - [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
-  - [`juiced help [COMMAND]`](#juiced-help-command)
-  - [`juiced page NAME [OUT]`](#juiced-page-name-out)
+* [`juiced component NAME [OUT]`](#juiced-component-name-out)
+* [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
+* [`juiced help [COMMAND]`](#juiced-help-command)
+* [`juiced page NAME [OUT]`](#juiced-page-name-out)
 
 ## `juiced component NAME [OUT]`
 
@@ -52,7 +49,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/component.ts)_
+_See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.2/src/commands/component.ts)_
 
 ## `juiced crud NAME [OUT]`
 
@@ -64,13 +61,13 @@ USAGE
 
 ARGUMENTS
   NAME  name of model (PascalCase)
-  OUT   [default: ./pages/api] output directory (defaults to pages/api/)
+  OUT   [default: /Users/femi/projects/individual/juiced/pages/api] output directory (defaults to pages/api/)
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/crud.ts)_
+_See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.2/src/commands/crud.ts)_
 
 ## `juiced help [COMMAND]`
 
@@ -99,11 +96,11 @@ USAGE
 
 ARGUMENTS
   NAME  name of page (PascalCase)
-  OUT   [default: ./pages] output directory (defaults to pages/)
+  OUT   [default: /Users/femi/projects/individual/juiced/pages] output directory (defaults to pages/)
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/page.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/page.ts)_
+_See code: [src/commands/page.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.2/src/commands/page.ts)_
 <!-- commandsstop -->
