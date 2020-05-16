@@ -4,9 +4,9 @@ juiced
 JavaScript but Juiced
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/juiced.svg)](https://npmjs.org/package/juiced)
-[![Downloads/week](https://img.shields.io/npm/dw/juiced.svg)](https://npmjs.org/package/juiced)
-[![License](https://img.shields.io/npm/l/juiced.svg)](https://github.com//juiced/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/juiced.svg)](https://www.npmjs.com/package/@theindividualcompany/juiced))
+[![Downloads/week](https://img.shields.io/npm/dw/juiced.svg)](https://www.npmjs.com/package/@theindividualcompany/juiced))
+[![License](https://img.shields.io/npm/l/juiced.svg)](https://github.com//theindividualcompany/juiced/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -28,10 +28,13 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`juiced component NAME [OUT]`](#juiced-component-name-out)
-* [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
-* [`juiced help [COMMAND]`](#juiced-help-command)
-* [`juiced page NAME [OUT]`](#juiced-page-name-out)
+- [juiced](#juiced)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`juiced component NAME [OUT]`](#juiced-component-name-out)
+  - [`juiced crud NAME [OUT]`](#juiced-crud-name-out)
+  - [`juiced help [COMMAND]`](#juiced-help-command)
+  - [`juiced page NAME [OUT]`](#juiced-page-name-out)
 
 ## `juiced component NAME [OUT]`
 
@@ -61,7 +64,7 @@ USAGE
 
 ARGUMENTS
   NAME  name of model (PascalCase)
-  OUT   [default: /Users/femi/projects/individual/juiced/pages/api] output directory (defaults to pages/api/)
+  OUT   [default: ./pages/api] output directory (defaults to pages/api/)
 
 OPTIONS
   -h, --help  show CLI help
@@ -96,7 +99,7 @@ USAGE
 
 ARGUMENTS
   NAME  name of page (PascalCase)
-  OUT   [default: /Users/femi/projects/individual/juiced/pages] output directory (defaults to pages/)
+  OUT   [default: ./pages] output directory (defaults to pages/)
 
 OPTIONS
   -h, --help  show CLI help
