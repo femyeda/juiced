@@ -19,7 +19,7 @@ $ npm install -g @theindividualcompany/juiced
 $ juiced COMMAND
 running command...
 $ juiced (-v|--version|version)
-@theindividualcompany/juiced/0.0.0 darwin-x64 node-v12.16.1
+@theindividualcompany/juiced/0.0.1 darwin-x64 node-v12.16.1
 $ juiced --help [COMMAND]
 USAGE
   $ juiced COMMAND
@@ -49,7 +49,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/component.ts)_
+_See code: [src/commands/component.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/component.ts)_
 
 ## `juiced crud NAME [OUT]`
 
@@ -67,7 +67,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/crud.ts)_
+_See code: [src/commands/crud.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/crud.ts)_
 
 ## `juiced help [COMMAND]`
 
@@ -95,12 +95,12 @@ USAGE
   $ juiced page NAME [OUT]
 
 ARGUMENTS
-  NAME  name of model (PascalCase)
+  NAME  name of page (PascalCase)
   OUT   [default: /Users/femi/projects/individual/juiced/pages] output directory (defaults to pages/)
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/page.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.0/src/commands/page.ts)_
+_See code: [src/commands/page.ts](https://github.com/theindividualcompany/juiced/blob/v0.0.1/src/commands/page.ts)_
 <!-- commandsstop -->
