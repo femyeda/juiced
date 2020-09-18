@@ -1,5 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { FindMany<%= pascalCaseSingularModelName%>Args } from '@prisma/client'
 import {_getMany<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 

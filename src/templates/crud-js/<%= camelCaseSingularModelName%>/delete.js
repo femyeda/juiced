@@ -1,5 +1,3 @@
-import {NextApiRequest, NextApiResponse} from 'next'
-import {<%= pascalCaseSingularModelName%>DeleteArgs} from '@prisma/client'
 import {_delete<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 

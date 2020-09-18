@@ -1,5 +1,3 @@
-import {NextApiRequest, NextApiResponse} from 'next'
-import {<%= pascalCaseSingularModelName%>CreateInput} from '@prisma/client'
 import {_create<%= pascalCaseSingularModelName%>, _exists<%= pascalCaseSingularModelName%>} from './_operations'
 
 export default async (req, res) => {
