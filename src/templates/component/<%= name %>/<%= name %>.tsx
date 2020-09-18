@@ -2,10 +2,9 @@ import React from 'react'
 import clsx from 'clsx'
 
 type Props = {
-  children: any
+  children?: React.ReactNode[]
   classes?: string
-  style?: React.CSSProperties
-}
+} & React.PropsWithoutRef<React.HTMLProps<HTMLElement>>
 
 const <%= name%>: React.FunctionComponent<Props> = (props: Props) => {
 
@@ -14,7 +13,7 @@ const <%= name%>: React.FunctionComponent<Props> = (props: Props) => {
       props?.classes,
       '<%= name%>Component',
     )}
-    style={{...props?.style}}>
+    {...props}>
       {props.children}
     </div>
   )

@@ -2,7 +2,7 @@ import {NextApiRequest, NextApiResponse} from 'next'
 import {<%= pascalCaseSingularModelName%>CreateInput} from '@prisma/client'
 import {_create<%= pascalCaseSingularModelName%>, _exists<%= pascalCaseSingularModelName%>} from './_operations'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req, res) => {
   const {
     data
   } = req.body
@@ -14,7 +14,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   
-  const createInput: <%= pascalCaseSingularModelName%>CreateInput = data
+  const createInput = data
 
   try {
     const <%= camelCaseSingularModelName%> = await _create<%= pascalCaseSingularModelName%>({

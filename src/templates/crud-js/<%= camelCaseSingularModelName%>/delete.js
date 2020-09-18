@@ -4,7 +4,7 @@ import {_delete<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req, res) => {
   const {
     data
   } = req.body
@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const selectInput = isEmpty(data.select) ? undefined : data.select
   const whereInput = isEmpty(data.where) ? undefined : data.where
 
-  const deleteArgs: <%= pascalCaseSingularModelName%>DeleteArgs = {
+  const deleteArgs = {
     select: selectInput,
     where: whereInput
   }
