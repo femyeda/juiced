@@ -11,16 +11,18 @@ export default async (req, res) => {
     })
   }
 
+  const selectInput = isEmpty(data.select) ? undefined : data.select
+  const createInput = isEmpty(data.update) ? undefined : data.data
+  const includeInput = isEmpty(data.include) ? undefined : data.include
   
-  const createInput = data
+  const createArgs = {
+    select: selectInput,
+    include: includeInput,
+    data: createInput
+  }
 
   try {
-    const <%= camelCaseSingularModelName%> = await _create<%= pascalCaseSingularModelName%>({
-      select: {
-        id: true,
-      },
-      data: createInput
-    })
+    const <%= camelCaseSingularModelName%> = await _create<%= pascalCaseSingularModelName%>(createArgs)
     
     return res.status(200).json({
       message: '<%= pascalCaseSingularModelName%> created.',
