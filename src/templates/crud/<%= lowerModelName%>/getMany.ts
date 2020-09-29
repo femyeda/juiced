@@ -1,9 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { FindMany<%= pascalCaseSingularModelName%>Args } from '@prisma/client'
 import {_getMany<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req, res) => {
   const {
     data
   } = req.body
@@ -13,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const includeInput = isEmpty(data.include) ? undefined : data.include
 
 
-  const findManyArgs: FindMany<%= pascalCaseSingularModelName%>Args = {
+  const findManyArgs = {
     select: selectInput,
     where: whereInput,
     include: includeInput
