@@ -9,12 +9,22 @@ export default async (req, res) => {
   const selectInput = isEmpty(data.select) ? undefined : data.select
   const whereInput = isEmpty(data.where) ? undefined : data.where
   const includeInput = isEmpty(data.include) ? undefined : data.include
+  const orderByInput = isEmpty(data.orderBy) ? undefined : data.orderBy
+  const cursorInput = isEmpty(data.cursor) ? undefined : data.cursor
+  const takeInput = isEmpty(data.take) ? undefined : data.take
+  const skipInput = isEmpty(data.skip) ? undefined : data.skip
+  const distinctInput = isEmpty(data.distinct) ? undefined : data.distinct
 
 
   const findManyArgs = {
     select: selectInput,
     where: whereInput,
-    include: includeInput
+    include: includeInput,
+    orderBy: orderByInput,
+    cursor: cursorInput,
+    take: takeInput,
+    skip: skipInput,
+    distinct: distinctInput,
   }
 
   try {
