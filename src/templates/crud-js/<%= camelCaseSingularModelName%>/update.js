@@ -1,7 +1,9 @@
 import {_update<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
+import nc from 'next-connect'
+import cors from '@Middleware/_cors'
 
-export default async (req, res) => {
+const post = async (req, res) => {
   const {
     data
   } = req.body
@@ -15,7 +17,7 @@ export default async (req, res) => {
   
   const selectInput = isEmpty(data.select) ? undefined : data.select
   const whereInput = isEmpty(data.where) ? undefined : data.where
-  const updateInput = isEmpty(data.update) ? undefined : data.data
+  const updateInput = isEmpty(data.data) ? undefined : data.data
   const includeInput = isEmpty(data.include) ? undefined : data.include
   
   const updateArgs = {
@@ -35,9 +37,13 @@ export default async (req, res) => {
     
     return res.status(200).json({
       message: '<%= pascalCaseSingularModelName%> updated.',
-      data: <%= camelCaseSingularModelName%>.id
+      data: <%= camelCaseSingularModelName%>
     })
   } catch (err) {
     return res.status(500).json({statusCode: 500, message: err.message})
   }
 }
+
+export default nc()
+  .use(cors)
+  .post(post)

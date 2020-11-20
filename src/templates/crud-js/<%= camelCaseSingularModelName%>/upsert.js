@@ -1,7 +1,9 @@
 import {_upsert<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
+import nc from 'next-connect'
+import cors from '@Middleware/_cors'
 
-export default async (req, res) => {
+const post = async (req, res) => {
   const {
     data
   } = req.body
@@ -32,9 +34,13 @@ export default async (req, res) => {
     
     return res.status(200).json({
       message: '<%= pascalCaseSingularModelName%> upserted.',
-      data: <%= camelCaseSingularModelName%>.id
+      data: <%= camelCaseSingularModelName%>
     })
   } catch (err) {
     return res.status(500).json({statusCode: 500, message: err.message})
   }
 }
+
+export default nc()
+  .use(cors)
+  .post(post)

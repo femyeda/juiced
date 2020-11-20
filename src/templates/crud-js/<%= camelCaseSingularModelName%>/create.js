@@ -1,6 +1,9 @@
 import {_create<%= pascalCaseSingularModelName%>, _exists<%= pascalCaseSingularModelName%>} from './_operations'
+import isEmpty from 'lodash/isEmpty'
+import nc from 'next-connect'
+import cors from '@Middleware/_cors'
 
-export default async (req, res) => {
+const post = async (req, res) => {
   const {
     data
   } = req.body
@@ -12,7 +15,7 @@ export default async (req, res) => {
   }
 
   const selectInput = isEmpty(data.select) ? undefined : data.select
-  const createInput = isEmpty(data.update) ? undefined : data.data
+  const createInput = isEmpty(data.data) ? undefined : data.data
   const includeInput = isEmpty(data.include) ? undefined : data.include
   
   const createArgs = {
@@ -26,9 +29,13 @@ export default async (req, res) => {
     
     return res.status(200).json({
       message: '<%= pascalCaseSingularModelName%> created.',
-      data: <%= camelCaseSingularModelName%>.id
+      data: <%= camelCaseSingularModelName%>
     })
   } catch (err) {
     return res.status(500).json({statusCode: 500, message: err.message})
   }
 }
+
+export default nc()
+  .use(cors)
+  .post(post)
