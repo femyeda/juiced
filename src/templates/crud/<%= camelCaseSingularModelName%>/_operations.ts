@@ -1,13 +1,22 @@
 import {
   PrismaClient,
+  <%= pascalCaseSingularModelName%>WhereUniqueInput,
+  <%= pascalCaseSingularModelName%>CreateArgs,
+  <%= pascalCaseSingularModelName%>FindUniqueArgs,
+  <%= pascalCaseSingularModelName%>FindManyArgs,
+  <%= pascalCaseSingularModelName%>UpsertArgs,
+  <%= pascalCaseSingularModelName%>UpdateArgs,
+  <%= pascalCaseSingularModelName%>UpdateManyArgs,
+  <%= pascalCaseSingularModelName%>DeleteArgs,
+  <%= pascalCaseSingularModelName%>DeleteManyArgs,
 } from '@prisma/client'
 
 
-export async function _exists<%= pascalCaseSingularModelName%>(args) {
+export async function _exists<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>WhereUniqueInput) {
   const prisma = new PrismaClient()
 
   try {
-    const result = await prisma.<%= camelCaseSingularModelName%>.findOne({
+    const result = await prisma.<%= camelCaseSingularModelName%>.findUnique({
       select: {
         id: true
       },
@@ -26,7 +35,7 @@ export async function _exists<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _create<%= pascalCaseSingularModelName%>(args) {
+export async function _create<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>CreateArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -38,7 +47,7 @@ export async function _create<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _get<%= pascalCaseSingularModelName%>(args) {
+export async function _get<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>FindUniqueArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -50,7 +59,7 @@ export async function _get<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _getMany<%= pascalCaseSingularModelName%>(args) {
+export async function _getMany<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>FindManyArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -62,7 +71,7 @@ export async function _getMany<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _upsert<%= pascalCaseSingularModelName%>(args) {
+export async function _upsert<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>UpsertArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -74,7 +83,7 @@ export async function _upsert<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _update<%= pascalCaseSingularModelName%>(args) {
+export async function _update<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>UpdateArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -86,7 +95,7 @@ export async function _update<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _updateMany<%= pascalCaseSingularModelName%>(args) {
+export async function _updateMany<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>UpdateManyArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -98,7 +107,7 @@ export async function _updateMany<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _delete<%= pascalCaseSingularModelName%>(args) {
+export async function _delete<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>DeleteArgs) {
   const prisma = new PrismaClient()
 
   try {
@@ -110,7 +119,7 @@ export async function _delete<%= pascalCaseSingularModelName%>(args) {
   }
 }
 
-export async function _deleteMany<%= pascalCaseSingularModelName%>(args) {
+export async function _deleteMany<%= pascalCaseSingularModelName%>(args: <%= pascalCaseSingularModelName%>DeleteManyArgs) {
   const prisma = new PrismaClient()
 
   try {

@@ -1,7 +1,6 @@
 import {_delete<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 import nc from 'next-connect'
-import cors from '@Middleware/_cors'
 
 const post = async (req, res) => {
   const {
@@ -34,5 +33,4 @@ const post = async (req, res) => {
 }
 
 export default nc()
-  .use(cors)
   .post(post)

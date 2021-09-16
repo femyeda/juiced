@@ -1,7 +1,6 @@
-import {_create<%= pascalCaseSingularModelName%>, _exists<%= pascalCaseSingularModelName%>} from './_operations'
+import {_update<%= pascalCaseSingularModelName%>} from './_operations'
 import isEmpty from 'lodash/isEmpty'
 import nc from 'next-connect'
-import cors from '@Middleware/_cors'
 
 const post = async (req, res) => {
   const {
@@ -10,25 +9,33 @@ const post = async (req, res) => {
   
   if (!data) {
     return res.status(400).json({
-      message: 'Missing create data'
+      message: 'Missing update data'
     })
   }
 
+  
   const selectInput = isEmpty(data.select) ? undefined : data.select
-  const createInput = isEmpty(data.data) ? undefined : data.data
+  const whereInput = isEmpty(data.where) ? undefined : data.where
+  const updateInput = isEmpty(data.data) ? undefined : data.data
   const includeInput = isEmpty(data.include) ? undefined : data.include
   
-  const createArgs = {
+  const updateArgs = {
     select: selectInput,
+    where: whereInput,
+    data: updateInput,
     include: includeInput,
-    data: createInput
   }
 
   try {
-    const <%= camelCaseSingularModelName%> = await _create<%= pascalCaseSingularModelName%>(createArgs)
+    const <%= camelCaseSingularModelName%> = await _update<%= pascalCaseSingularModelName%>({
+      where: updateArgs.where,
+      data: updateArgs.data,
+      select: updateArgs.select,
+      include: updateArgs.include
+    })
     
     return res.status(200).json({
-      message: '<%= pascalCaseSingularModelName%> created.',
+      message: '<%= pascalCaseSingularModelName%> updated.',
       data: <%= camelCaseSingularModelName%>
     })
   } catch (err) {
@@ -37,5 +44,4 @@ const post = async (req, res) => {
 }
 
 export default nc()
-  .use(cors)
   .post(post)
