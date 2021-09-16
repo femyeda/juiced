@@ -32,7 +32,7 @@ function toPluralPascalCase(input: string): string {
 }
 
 export default class Component extends Command {
-  static description = "Create new component";
+  static description = "Generate api routes for schema.";
 
   static flags = {
     help: flags.help({ char: "h" }),
@@ -56,7 +56,7 @@ export default class Component extends Command {
     const { args, flags } = this.parse(Component);
     const name = args.name;
     const outputDir = args.out;
-    this.log(`Creating crud api operations ${name}`);
+    this.log(`Generating api routes for ${name}`);
 
     const params = {
       lowerModelName: toLower(name),
