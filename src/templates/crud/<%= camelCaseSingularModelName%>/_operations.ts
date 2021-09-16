@@ -51,7 +51,7 @@ export async function _get<%= pascalCaseSingularModelName%>(args: <%= pascalCase
   const prisma = new PrismaClient()
 
   try {
-    return await prisma.<%= camelCaseSingularModelName%>.findOne(args)
+    return await prisma.<%= camelCaseSingularModelName%>.findUnique(args)
   } catch (err) {
     throw err
   } finally {

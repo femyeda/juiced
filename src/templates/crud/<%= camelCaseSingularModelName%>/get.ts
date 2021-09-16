@@ -11,14 +11,14 @@ const post = async (req, res) => {
   const whereInput = isEmpty(data.where) ? undefined : data.where
   const includeInput = isEmpty(data.include) ? undefined : data.include
 
-  const findOneArgs = {
+  const findUniqueArgs = {
     select: selectInput,
     where: whereInput,
     include: includeInput
   }
 
   try {
-    const <%= camelCaseSingularModelName%> = await _get<%= pascalCaseSingularModelName%>(findOneArgs)
+    const <%= camelCaseSingularModelName%> = await _get<%= pascalCaseSingularModelName%>(findUniqueArgs)
 
     return res.status(200).json({ data: <%= camelCaseSingularModelName%> })
   } catch (err) {
