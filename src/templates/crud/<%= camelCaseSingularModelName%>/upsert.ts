@@ -1,8 +1,9 @@
 import {_upsert<%= pascalCaseSingularModelName%>} from './_operations'
+import { NextApiRequest, NextApiResponse } from "next"
 import isEmpty from 'lodash/isEmpty'
 import nc from 'next-connect'
 
-const post = async (req, res) => {
+const post = async (req: NextApiRequest, res: NextApiResponse) => {
   const {
     data
   } = req.body
@@ -35,8 +36,9 @@ const post = async (req, res) => {
       message: '<%= pascalCaseSingularModelName%> upserted.',
       data: <%= camelCaseSingularModelName%>
     })
-  } catch (err) {
-    return res.status(500).json({statusCode: 500, message: err.message})
+  } catch (error) {
+    console.error("[api] <%= camelCaseSingularModelName%>/upsert", error)
+    return res.status(500).json({statusCode: 500, message: error.message})
   }
 }
 
