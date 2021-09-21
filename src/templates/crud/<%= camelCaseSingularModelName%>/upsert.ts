@@ -16,7 +16,7 @@ const post = async (req: NextApiRequest, res: NextApiResponse) => {
 
   
   const selectInput = isEmpty(data.select) ? undefined : data.select
-  const whereInput = isEmpty(data.where) ? undefined : data.where
+  const whereInput = data.where == null ? undefined : data.where
   const createInput = isEmpty(data.create) ? undefined : data.create
   const updateInput = isEmpty(data.update) ? undefined : data.update
   const includeInput = isEmpty(data.include) ? undefined : data.include
