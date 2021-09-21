@@ -36,6 +36,8 @@ export default class Component extends Command {
 
   static flags = {
     help: flags.help({ char: "h" }),
+    withCors: flags.boolean(),
+    withAuth: flags.boolean()
   };
 
   static args = [
@@ -69,6 +71,9 @@ export default class Component extends Command {
 
     let templateDir = "crud";
 
+    if (flags.withAuth && flags.withCors) {
+      templateDir = "crudWithCorsWithAuthentication"
+    }
     try {
       editor.copyTpl(
         `/Users/femi/projects/juiced/src/templates/${templateDir}`,
