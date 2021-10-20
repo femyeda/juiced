@@ -1,9 +1,9 @@
-import { <%= pascalCaseSingularModelName %>UpdateManyArgs } from "@prisma/client"
+import { Prisma } from "@db/index"
 import superagent from "superagent"
-import { <%= upperCaseModelName %>_API_URL } from ".."
+import { <%= snakeUpperCaseModelName %>_API_URL } from ".."
 
-export const updateMany<%= pascalCaseSingularModelName %> = async (args: <%= pascalCaseSingularModelName %>UpdateManyArgs) => {
-  const response = await superagent.post(`${<%= upperCaseModelName %>_API_URL}/updateMany`).send({ data: args })
+export const updateMany<%= pascalCaseSingularModelName %> = async (args: Prisma.<%= pascalCaseSingularModelName %>UpdateManyArgs) => {
+  const response = await superagent.post(`${<%= snakeUpperCaseModelName %>_API_URL}/updateMany`).send({ data: args })
 
   return response.body.data
 }

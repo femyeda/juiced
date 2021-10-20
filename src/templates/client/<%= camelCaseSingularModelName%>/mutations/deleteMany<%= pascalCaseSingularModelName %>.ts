@@ -1,9 +1,9 @@
-import { <%= pascalCaseSingularModelName %>DeleteManyArgs } from "@prisma/client"
+import { Prisma } from "@db/index"
 import superagent from "superagent"
-import { <%= upperCaseModelName %>_API_URL } from ".."
+import { <%= snakeUpperCaseModelName %>_API_URL } from ".."
 
-export const deleteMany<%= pascalCaseSingularModelName %> = async (args: <%= pascalCaseSingularModelName %>DeleteManyArgs) => {
-  const response = await superagent.post(`${<%= upperCaseModelName %>_API_URL}/deleteMany`).send({ data: args })
+export const deleteMany<%= pascalCaseSingularModelName %> = async (args: Prisma.<%= pascalCaseSingularModelName %>DeleteManyArgs) => {
+  const response = await superagent.post(`${<%= snakeUpperCaseModelName %>_API_URL}/deleteMany`).send({ data: args })
 
   return response.body.data
 }

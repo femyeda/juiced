@@ -1,4 +1,4 @@
-export const <%= upperCaseModelName %>_API_URL = "/api/<%= camelCaseSingularModelName %>"
+export const <%= snakeUpperCaseModelName %>_API_URL = "/api/<%= camelCaseSingularModelName %>"
 
 export * from "./mutations/create<%= pascalCaseSingularModelName %>"
 export * from "./mutations/delete<%= pascalCaseSingularModelName %>"

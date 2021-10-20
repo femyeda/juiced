@@ -1,6 +1,6 @@
 import { Command, flags } from "@oclif/command";
 const camelCase = require("camelcase");
-import { capitalize, toLower, upperCase } from "lodash";
+import { capitalize, toLower, upperCase, snakeCase } from "lodash";
 const _pluralize = require("pluralize");
 
 import editor from "../utils/editor";
@@ -63,6 +63,7 @@ export default class Component extends Command {
       lowerModelName: toLower(name),
       upperModelName: capitalize(name),
       upperCaseModelName: upperCase(name),
+      snakeUpperCaseModelName: snakeCase(name).toUpperCase(),
       camelCaseSingularModelName: toSingularCamelCase(name),
       camelCasePluralModelName: toPluralCamelCase(name),
       pascalCaseSingularModelName: toSingularPascalCase(name),
