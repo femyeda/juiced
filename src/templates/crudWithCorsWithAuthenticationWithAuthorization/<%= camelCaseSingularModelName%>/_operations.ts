@@ -1,4 +1,39 @@
+import { AbilityBuilder, AbilityClass } from "@casl/ability"
+import { PrismaAbility } from "@casl/prisma"
+
 import prisma, { Prisma } from "@db"
+
+import { AppAbility } from "@lib/types"
+
+/**
+ * What's being done here is can "actor" act on "object"
+  type DefineScheduleAbilitiesArgs = {
+    actorId: string
+    object: ObjectType
+  }
+
+  export function DefineScheduleAbilities({ accountId, object }: DefineScheduleAbilitiesArgs) {...}
+ */
+
+type Define<%= pascalCaseSingularModelName%>AbilitiesArgs = {
+  accountId: string
+}
+
+export function Define<%= pascalCaseSingularModelName%>Abilities({accountId}: Define<%= pascalCaseSingularModelName%>AbilitiesArgs) {
+  const AppAbility = PrismaAbility as AbilityClass<AppAbility>
+  const { can, cannot, build } = new AbilityBuilder(AppAbility)
+
+  throw Error("Unimplemented")
+  /**
+  can("read", "<%= pascalCaseSingularModelName%>")
+  can("get", "<%= pascalCaseSingularModelName%>")
+  can("update", "<%= pascalCaseSingularModelName%>", { accountId: accountId })
+  can("delete", "<%= pascalCaseSingularModelName%>", { accountId: accountId })
+
+  const ability = build()
+  return ability
+   */
+}
 
 export async function _exists<%= pascalCaseSingularModelName%>(
   args: Prisma.<%= pascalCaseSingularModelName%>WhereUniqueInput

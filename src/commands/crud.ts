@@ -1,6 +1,6 @@
 import { Command, flags } from "@oclif/command";
 const camelCase = require("camelcase");
-import { capitalize, toLower } from "lodash";
+import { capitalize, toLower, upperCase, snakeCase } from "lodash";
 const _pluralize = require("pluralize");
 
 import editor from "../utils/editor";
@@ -37,7 +37,9 @@ export default class Component extends Command {
   static flags = {
     help: flags.help({ char: "h" }),
     withCors: flags.boolean(),
-    withAuth: flags.boolean()
+    withAuthentication: flags.boolean(),
+    withAuthorization: flags.boolean(),
+    withAuth: flags.boolean(),
   };
 
   static args = [
@@ -63,6 +65,8 @@ export default class Component extends Command {
     const params = {
       lowerModelName: toLower(name),
       upperModelName: capitalize(name),
+      upperCaseModelName: upperCase(name),
+      snakeUpperCaseModelName: snakeCase(name).toUpperCase(),
       camelCaseSingularModelName: toSingularCamelCase(name),
       camelCasePluralModelName: toPluralCamelCase(name),
       pascalCaseSingularModelName: toSingularPascalCase(name),
@@ -71,9 +75,17 @@ export default class Component extends Command {
 
     let templateDir = "crud";
 
-    if (flags.withAuth && flags.withCors) {
-      templateDir = "crudWithCorsWithAuthentication"
+    if (flags.withAuthentication && flags.withCors) {
+      templateDir = "crudWithCorsWithAuthentication";
     }
+
+    if (
+      (flags.withAuthorization && flags.withAuthentication && flags.withCors) ||
+      (flags.withAuth && flags.withCors)
+    ) {
+      templateDir = "crudWithCorsWithAuthenticationWithAuthorization";
+    }
+
     try {
       editor.copyTpl(
         `/Users/femi/projects/juiced/src/templates/${templateDir}`,
